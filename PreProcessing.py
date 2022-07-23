@@ -25,7 +25,7 @@ def cleanText(df):
 
     for index, row in df.iterrows():
 
-        curText = row.discohttps://app.joinhandshake.com/stu/jobs/6688609?ref=preview-header-clickrse_text
+        curText = row.discourse_text
 
         # lower case conversion
         curText = curText.lower()
