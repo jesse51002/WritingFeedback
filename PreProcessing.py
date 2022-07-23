@@ -5,8 +5,11 @@ import re
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
+from imblearn.over_sampling import RandomOverSampler
 
 train = pd.read_csv("./Dataset/train.csv")
+
+print("Categories Before: ", train['discourse_effectiveness'].value_counts())
 
 train.drop(['discourse_id', 'essay_id'] , axis=1, inplace=True)
 
@@ -22,7 +25,7 @@ def cleanText(df):
 
     for index, row in df.iterrows():
 
-        curText = row.discourse_text
+        curText = row.discohttps://app.joinhandshake.com/stu/jobs/6688609?ref=preview-header-clickrse_text
 
         # lower case conversion
         curText = curText.lower()
@@ -102,12 +105,21 @@ def combineDataFrame(dfOg, restDfs):
 
 
 # Gets the combined and fully cleaned model
-trainFullyProcessed = combineDataFrame(train, [X_categorical_OneHot_train, train_vec_dataframe])
+trainFullyCombined = combineDataFrame(train, [X_categorical_OneHot_train, train_vec_dataframe])
+
+# Performs oversampling
+ros = RandomOverSampler(sampling_strategy='auto', random_state=0)
+
+processedY = trainFullyCombined['discourse_effectiveness']
+trainFullyCombined.drop(['discourse_effectiveness'], axis=1, inplace=True)
+
+xResampled, yResampled = ros.fit_resample(trainFullyCombined, processedY)
+
+trainFullyProcessed = xResampled
+trainFullyProcessed['discourse_effectiveness'] = yResampled
+
+print("Categories After: ", train['discourse_effectiveness'].value_counts())
+
 print(trainFullyProcessed.head())
-
 trainFullyProcessed.to_csv('./Dataset/trainFullyProcessed.csv', index=False)
-
-
-
-
 
