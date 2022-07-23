@@ -25,7 +25,7 @@ def cleanText(df):
 
     for index, row in df.iterrows():
 
-        curText = row.discohttps://app.joinhandshake.com/stu/jobs/6688609?ref=preview-header-clickrse_text
+        curText = row.discourse_text
 
         # lower case conversion
         curText = curText.lower()
@@ -123,4 +123,21 @@ print("Categories After: ", train['discourse_effectiveness'].value_counts())
 print(trainFullyProcessed.head())
 trainFullyProcessed.to_csv('./Dataset/trainFullyProcessed.csv', index=False)
 
-#Check if
+
+# Check if every letter is capitalized after every sentence
+def capitalize(text):
+    sentenceArr = [x for x in re.split(r"[\n\.\?\!]+", text) if len(x) > 0]
+    i = 0
+    upper_count = 0
+    for sentence in sentenceArr:
+        while i < len(sentence):
+            if sentence[i].isalpha():
+                if sentence[i].isupper():
+                    upper_count = upper_count + 1
+                else:
+                    break
+            i = i + 1
+    return (upper_count / len(sentenceArr)) * 100
+
+
+print(capitalize(text))
