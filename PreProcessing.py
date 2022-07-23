@@ -123,3 +123,4 @@ print("Categories After: ", train['discourse_effectiveness'].value_counts())
 print(trainFullyProcessed.head())
 trainFullyProcessed.to_csv('./Dataset/trainFullyProcessed.csv', index=False)
 
+#Check if
