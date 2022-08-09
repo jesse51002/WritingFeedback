@@ -2,7 +2,7 @@
 **Purpose**
 This project's purpose is to categorize argumentative elements in student writing as "effective," "adequate," or "ineffective." A model will be trained on data that represents the 6th-12th grade population of the United States of America. This model will cut down on bias and help in giving students feedback on their argumentative writing, which will in turn help students become more confident, creative, and proficient writers. With the use of automated guidance, students will improve their critical thinking and civic engagement skills as they practice argumentative writing.
 
-##Pre-Processing
+## Pre-Processing
 
 Data Cleaning
 Converted all the words to lower case. 
