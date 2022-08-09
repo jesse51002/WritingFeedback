@@ -5,11 +5,11 @@
 ## Pre-Processing
 
 ### Data Cleaning
-Converted all the words to lower case. 
-Removed trailing and leading spaces. 
-Removed all non-alphabetic characters with the Regular Expression library.
-Stemmed the text in the dataset with the NLTK library. 
-We decided to keep the stopwords because we discovered it improved our model’s accuracy.
+* Converted all the words to lower case. 
+* Removed trailing and leading spaces. 
+* Removed all non-alphabetic characters with the Regular Expression library.
+* Stemmed the text in the dataset with the NLTK library. 
+* We decided to keep the stopwords because we discovered it improved our model’s accuracy.
 
 ### Vectorizing
 For our vectorization, we decided to use the TfidfVectorizer function on the cleaned data. The number of words that came out was 10,191.
