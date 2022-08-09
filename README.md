@@ -6,7 +6,7 @@ This project's purpose is to categorize argumentative elements in student writin
 We got our data from the "Feedback Prize - Predicting Effective Arguments" Kaggle competetion. The goal of the competition was to classify a given arguement into either Ineffective, Adequate or Effective.
 
 Although the data was extremely imbalanced with Adequate having more than double the amount of both Ineffective and Effective.
-![Effectiveness Piechart](GitImages/EffectivenessImbalance.png?raw=true "Effectiveness Piechart")
+![Effectiveness Piechart](GitImages/EffectivenessImbalance.png?raw=true "Effectiveness Piechart"| width=500)
 
 Each argument was also classified into one of 7 discourse types with a distribution as follows
 ![Discourse Type Piechart](GitImages/typeImbalance.png?raw=true "Discourse Type Piechart")
@@ -31,3 +31,8 @@ We used one-hot encoding to preprocess the categorical features for our machine 
 
 ### Oversampling
 We performed oversampling on the training data to combat data imbalance. 
+
+## Model 
+
+### Linear Regression
+
