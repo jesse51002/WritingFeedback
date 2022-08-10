@@ -37,5 +37,14 @@ We performed oversampling on the training data to combat data imbalance.
 ## Model 
 
 ### Linear Regression
+The model we decided to use was the sklearn linear regression model with the follow parameters
+*C=500
+*multi_class="multinominal"
 
+This gave us a total accuracy score of **67.35%** with the following distribution of each class
+*Ineffective Accuracy: 68.36%
+*Adequate Accuracy: 57.46%
+*Effective Accuracy: 74.84%
+![Accuracy Heatmap](GitImages/accuracyHeatmap.png?raw=true "Accuracy Heatmap")
 
+Our model was best at classifying effective arguments and worst at classifying adequate argeuments. 
